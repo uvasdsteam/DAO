@@ -1,0 +1,1 @@
+daostack-migrate dao --params /Users/landonburtle/2024_Fall/Datascience/DAO/Imported_DAO_script/starter-template/data/testDaoSpec.json --provider https://eth-sepolia.g.alchemy.com/v2/0_x1OKjfKi8QkN8eG76NX_Qeem_C0pZu --private-key e4a71933926b5b9cc6dd5a3123b61f1f9be553b8861df8ab34b249d9499df09a

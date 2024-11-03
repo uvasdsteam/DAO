@@ -1,0 +1,10 @@
+{
+  "name": "DAO",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {},
+  "dependencies": {
+    "saas": "^1.0.0",
+    "sass": "^1.80.6"
+  }
+}
