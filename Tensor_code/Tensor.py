@@ -4,6 +4,9 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
+import matplotlib as plt
+import datetime
+import seaborn as sns 
 
 def forecast_stock(ticker, start_date, end_date):
   data = yf.download(ticker, start=start_date, end=end_date)
@@ -38,12 +41,24 @@ def forecast_stock(ticker, start_date, end_date):
   predictions = scaler.inverse_transform(predictions)
 
 
-
-
-
 stock_tickers = ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA']
 
-for ticker in stock_tickers:
-  model, predictions = forecast_stock(ticker, '2010-01-01', '2023-10-31')
+def get_latest_yfinance_date(ticker):
+  df = yf.download(ticker, start="2010-01-01")
+  latest_date = df.index[-1].strftime('%Y-%m-%d')
+  return latest_date
 
+# Get today's date
+today = datetime.date.today().strftime('%Y-%m-%d')
+
+for ticker in stock_tickers:
+  latest_api_date = get_latest_yfinance_date(ticker)
+  end_date = min(today, latest_api_date)
+  result = forecast_stock(ticker, '2010-01-01', end_date) 
+  if result is not None:
+    model, predictions = result
+      # Proceed with using model and predictions
+  else:
+    print(f"Warning: forecast_stock returned None for ticker {ticker}")
+      # Handle the case where forecast_stock fails, if necessary
 
