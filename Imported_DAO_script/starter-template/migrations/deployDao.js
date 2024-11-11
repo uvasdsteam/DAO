@@ -1,4 +1,4 @@
-const DAOstackMigration = require('@daostack/migration');
+const DAOstackMigration = require('daostack/migration');
 const migrationSpec =  require('../data/testDaoSpec.json')
 require('dotenv').config();
 
