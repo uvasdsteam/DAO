@@ -5,6 +5,7 @@
   "packages": {},
   "dependencies": {
     "saas": "^1.0.0",
-    "sass": "^1.80.6"
+    "sass": "^1.80.6",
+    "web3": "^4.15.0"
   }
 }
