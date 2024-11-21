@@ -1,2 +1,11 @@
 *.DS_Store
-node_modules/
+node_modules.*
+.swp
+*~
+.vscode/
+.idea/**
+.DS_Store
+
+__pycache__
+*.pyo
+*.pyc
